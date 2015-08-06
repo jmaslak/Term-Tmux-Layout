@@ -1,0 +1,45 @@
+This module uses Dist::Zilla to create its' makefile.  CPAN and users
+expect to be able to install a package using package that can be
+installed using the standard:
+
+  perl Makefile.PL
+  make test
+  make install
+
+However, you'll note that there is no Makefile.PL in the git repository
+at https://github.com/jmaslak/Term-Tmux-Layout .  To create that
+Makefile.PL (and also other essential files, such as the meta files that
+describe the dependencies this module has), you need Dist::Zilla.  To
+install Dist::Zilla :
+
+  cpan Dist::Zilla              # Install Dist::Zilla
+  cpan `dzil authordeps`        # Install the plugins I used
+
+Then, you can create the distribution package using:
+
+  dzil build
+
+At this point, you will have a tarball and new directory that is not
+checked into git.  If you change into that new directory (named
+something like Term-Tmux-Layout-1.000), you will find the standard
+Makefile.PL, metafiles, etc.
+
+Dependencies should be auto-detected, unless something weird is done
+with the dependencies (like evaluating them in an "eval()".
+
+This module also uses POD Weaver, which simplifies the production
+of POD documentation by eliminating much of the standard boilerplate.
+
+To submit pull requests on Github, follow the standard Github
+conventions (you can search on Google for information), but do not
+check in any of the Dist::Zilla-generated files.  There is one
+exception: README should be copyed from a release directory and it
+should be checked in, so users browsing CPAN can read about the
+release easily.
+
+The Git repo is maintained on Github:
+  https://github.com/jmaslak/Term-Tmux-Layout
+
+A bugtracker is available for this distribution at:
+  https://rt.cpan.org/Public/Dist/Display.html?Name=Term-Layout
+
