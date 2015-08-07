@@ -86,13 +86,14 @@ sub get_size {
     } elsif ($pid == 0) { # Child
         my $dir = cwd();
 
-        my (@i) = map { "-I$_" } @INC;
+        # Make sure that we have a the same includes
+        $ENV{PERL5LIB} = join $Config{path_sep}, @INC;
 
         my $getwinsize =
         File::Spec->catfile($dir, 't', 'bin', 'getwinsize.pl');
 
         system('tmux','new-window','-n','test','-t',$sn,
-            ${Config{perlpath}}, @i, $getwinsize, $port);
+            ${Config{perlpath}}, $getwinsize, $port);
         exit;
     } else {
         fail("Fork failed");
