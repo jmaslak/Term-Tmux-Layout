@@ -32,10 +32,7 @@ of POD documentation by eliminating much of the standard boilerplate.
 
 To submit pull requests on Github, follow the standard Github
 conventions (you can search on Google for information), but do not
-check in any of the Dist::Zilla-generated files.  There is one
-exception: README should be copyed from a release directory and it
-should be checked in, so users browsing CPAN can read about the
-release easily.
+check in any of the Dist::Zilla-generated files.
 
 The Git repo is maintained on Github:
   https://github.com/jmaslak/Term-Tmux-Layout
