@@ -1,3 +1,8 @@
+1.001_01 - Aug 7, 2015
+Joel C. Maslak <jmaslak@antelope.net>
+ * Development release with addtiional resolution fetching diagnostic
+   code
+
 1.001 - Aug 7, 2015
 Joel C. Maslak <jmaslak@antelope.net>
  * Fixed tests failing on platforms with long @INC lists

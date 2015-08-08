@@ -22,6 +22,7 @@ use Test::More;
 use Time::Out;
 
 # my $tests = 4;
+my $DIAG = 1;       # Print extra diagnostic messages
 
 # Check for tmux
 my $result = 1;
@@ -87,11 +88,15 @@ sub get_size {
         my $dir = cwd();
 
         # Make sure that we have a the same includes
+        diag "PERL5LIB (pre): ".$ENV{PERL5LIB} if $DIAG;
         $ENV{PERL5LIB} = join $Config{path_sep}, @INC;
+        diag "PERL5LIB (post): ".$ENV{PERL5LIB} if $DIAG;
 
         my $getwinsize =
         File::Spec->catfile($dir, 't', 'bin', 'getwinsize.pl');
 
+        diag join(' ', 'tmux', 'new-window', '-n', 'test', '-t', $sn,
+            ${Config{perlpath}}, $getwinsize, $port) if $DIAG;
         system('tmux','new-window','-n','test','-t',$sn,
             ${Config{perlpath}}, $getwinsize, $port);
         exit;
