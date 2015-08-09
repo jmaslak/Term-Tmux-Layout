@@ -22,24 +22,32 @@ use Test::More;
 use Time::Out;
 
 # my $tests = 4;
-my $DIAG = 1;       # Print extra diagnostic messages
+my $DIAG = undef;
 
 # Check for tmux
 my $result = 1;
+my $v;
 {
     no warnings 'exec';
-    $result = system('tmux', '-V');
+    $v = `tmux -V`;
+    $result = $?;
 }
+
 if ($result == 0) {
 #    plan tests => $tests;
+    if ($v =~ m/^(:?tmux)? 1\./) {
+        # We can support tmux < 2, but the syntax of the
+        # command line for new-window is different, so the
+        # tests (not the actual code) fails.  Let's just
+        # skip the tests in this case.
+        diag("tmux version $v too old for tests to use");
+        plan skip_all => 'not testing tmux version < 2';
+    }
 } else {
     plan skip_all => 'tmux not found';
 }
 
-ok(!$result, 'found tmux in path');
-
-my $v = `tmux -V`;
-ok($? == 0, 'tmux version exec successful');
+ok($result == 0, 'tmux version exec successful');
 ok($v, 'got tmux version number');
 diag("tmux version: $v");
 
