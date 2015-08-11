@@ -1,3 +1,6 @@
+1.003 - Aug 11, 2015
+ * Fix assert failure due to incorrect test on subroutine call
+
 1.002 - Aug 10, 2015
 Joel C. Maslak <jmaslak@antelope.net>
  * Skips tests for tmux < 2.0 (the actual module works fine, it's just tests

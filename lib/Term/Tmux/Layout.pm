@@ -46,7 +46,7 @@ wrapper around this function.
 =cut
 
 sub set_layout {
-    if ($#_ >= 1) { confess 'invalid call' }
+    if ($#_ < 1) { confess 'invalid call' }
     my ($self, @def) = @_;
 
     my ($x, $y) = $self->get_window_size();
