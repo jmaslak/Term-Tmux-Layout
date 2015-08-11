@@ -1,13 +1,8 @@
-1.001_02 - Aug 8, 2015
+1.002 - Aug 10, 2015
 Joel C. Maslak <jmaslak@antelope.net>
- * Development release with test skips for tmux < 2.0 (the actual module
-   works fine, it's just tests that fail because the tests use
-   "tmux new-window" which the module doesn't use)
-
-1.001_01 - Aug 7, 2015
-Joel C. Maslak <jmaslak@antelope.net>
- * Development release with addtiional resolution fetching diagnostic
-   code
+ * Skips tests for tmux < 2.0 (the actual module works fine, it's just tests
+   that fail because the tests use "tmux new-window" which the module doesn't
+   use)
 
 1.001 - Aug 7, 2015
 Joel C. Maslak <jmaslak@antelope.net>
