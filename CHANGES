@@ -1,4 +1,11 @@
+1.004 - Jan 10, 2016
+Joel C. Maslak <jmaslak@antelope.net>
+ * In some environments, the library directory isn't being passed
+   to child processes, causing tests to fail.  Now passing lib on
+   command line to the getresolution.pl subtest
+
 1.003 - Aug 11, 2015
+Joel C. Maslak <jmaslak@antelope.net>
  * Fix assert failure due to incorrect test on subroutine call
 
 1.002 - Aug 10, 2015

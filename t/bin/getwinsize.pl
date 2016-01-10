@@ -3,10 +3,11 @@
 use strict;
 use warnings;
 
-use IO::Socket::IP;
-use Term::Tmux::Layout;
+my $port = shift(@ARGV);
 
-my $port = $ARGV[0];
+use lib @ARGV;
+use IO::Socket::IP;
+require Term::Tmux::Layout;
 
 my $sock = IO::Socket::IP->new(
     PeerPort => $port,
@@ -24,4 +25,3 @@ if (defined($y)) {
 }
 
 close $sock;
-

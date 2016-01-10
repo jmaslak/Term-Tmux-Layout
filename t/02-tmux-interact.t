@@ -106,7 +106,7 @@ sub get_size {
         diag join(' ', 'tmux', 'new-window', '-n', 'test', '-t', $sn,
             ${Config{perlpath}}, $getwinsize, $port) if $DIAG;
         system('tmux','new-window','-n','test','-t',$sn,
-            ${Config{perlpath}}, $getwinsize, $port);
+            ${Config{perlpath}}, $getwinsize, $port, @INC);
         exit;
     } else {
         fail("Fork failed");
