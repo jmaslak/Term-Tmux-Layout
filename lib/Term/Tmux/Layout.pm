@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 Joel Maslak
+# Copyright (C) 2015,2016 J. Maslak
 # All Rights Reserved - See License
 #
 

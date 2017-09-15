@@ -2,7 +2,7 @@ This archive contains the distribution Term-Tmux-Layout
 
   Create tmux layout strings programmatically
 
-This software is copyright (c) 2015 by Joel Maslak.
+This software is copyright (c) 2015,2016 by J. Maslak.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
