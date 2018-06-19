@@ -447,7 +447,7 @@ sub get_window_size {
     @windows = grep { /\(active\)$/ } map { chomp; $_ } @windows;
 
     if (scalar(@windows)) {
-        my ($x, $y) = $windows[0] =~ / \[(\d+)x(\d+)\] /;
+        my ($x, $y) = $windows[0] =~ / \[(\d+)x(\d+)\] /a;
         return ($x, $y);
     }
 
