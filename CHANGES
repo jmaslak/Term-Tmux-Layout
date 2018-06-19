@@ -3,32 +3,32 @@ Joelle Maslak <jmaslak@antelope.net>
  * Code of Conduct
 
 1.005 - Sep 15, 2017
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * Change author name
  * Update copyright notice
  * No functionality change
 
 1.004 - Jan 10, 2016
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * In some environments, the library directory isn't being passed
    to child processes, causing tests to fail.  Now passing lib on
    command line to the getresolution.pl subtest
 
 1.003 - Aug 11, 2015
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * Fix assert failure due to incorrect test on subroutine call
 
 1.002 - Aug 10, 2015
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * Skips tests for tmux < 2.0 (the actual module works fine, it's just tests
    that fail because the tests use "tmux new-window" which the module doesn't
    use)
 
 1.001 - Aug 7, 2015
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * Fixed tests failing on platforms with long @INC lists
 
 1.000 - July 26, 2015
-J. Maslak <jmaslak@antelope.net>
+Joelle Maslak <jmaslak@antelope.net>
  * Initial version
 

@@ -2,7 +2,7 @@
 # Yes, we want to make sure things work in taint mode
 
 #
-# Copyright (C) 2015 J. Maslak
+# Copyright (C) 2015 Joelle Maslak
 # All Rights Reserved - See License
 #
 

@@ -3,7 +3,7 @@
 # taint mode to be unhappy.  So don't "prove -t" this script.
 
 #
-# Copyright (C) 2015 J. Maslak
+# Copyright (C) 2015 Joelle Maslak
 # All Rights Reserved - See License
 #
 
