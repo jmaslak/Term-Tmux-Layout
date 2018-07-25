@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+1.182061  2018-07-24 22:59:00-06:00 America/Denver (TRIAL RELEASE)
  * TRIAL release.
  * Fix syntax error issue with Perl <= 5.12
 
