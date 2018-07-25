@@ -18,7 +18,7 @@ use Term::Tmux::Layout;
 
 =head1 DESCRIPTION
 
-This utility takes a "layout" in a text format, and signals the current 
+This utility takes a "layout" in a text format, and signals the current
 tmux window to use this new layout.
 
 The layout format consists of a text field of numbers or other
@@ -53,9 +53,9 @@ This layout can be passed a single argument, where the rows are
 seperated by pipe characters C<|> or new lines embedded in the
 argument.
 
-If this utility is passed an multiple arguments, 
-each argument starts its own row.  Each element can also contain pipe
-or newlines, and these are also interpreted as row deliminators.
+If this utility is passed an multiple arguments, each argument
+starts its own row.  Each element can also contain pipe or newlines,
+and these are also interpreted as row deliminators.
 
 Finally, if no arguments are passed, this utility will instead read
 from C<STDIN>, with each line being treated as a row (in addition,
@@ -78,7 +78,7 @@ Thus, the following are all valid ways of calling C<tmuxlayout>:
 =cut
 
 MAIN: {
-    if (scalar(@ARGV) < 1) {
+    if ( scalar(@ARGV) < 1 ) {
         while (<STDIN>) { push @ARGV, $_; }
     }
 
