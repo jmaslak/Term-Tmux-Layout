@@ -1,0 +1,38 @@
+severity=4
+verbose=8
+exclude=InputOutput::RequireBriefOpen Subroutines::ProhibitSubroutinePrototypes Subroutines::RequireArgUnpacking
+
+# Classes with metod signatures
+[-Subroutines::ProhibitSubroutinePrototypes]
+
+# We turn on strictures in our bootstrap module we almost always use
+[-TestingAndDebugging::RequireUseStrict]
+[-TestingAndDebugging::RequireUseWarnings]
+
+# When we modify $_, we know what we're doing.
+[-ControlStructures::ProhibitMutatingListFunctions]
+
+# It's okay to do "no warnings 'foo'" if needed - you are expected to
+# know what you're doing if you do that!
+[TestingAndDebugging::ProhibitNoWarnings]
+allow_with_category_restriction = 1
+
+# If I use <STDIN>, I don't want <>!
+[-InputOutput::ProhibitExplicitStdin]
+
+# This is useful in map to map an array to a hash ( map { $_, $_ } ... )
+[ValuesAndExpressions::ProhibitCommaSeparatedStatements]
+allow_last_statement_to_be_comma_separated_in_map_and_grep = 1
+
+# We don't want to require these
+[-ErrorHandling::RequireUseOfExceptions]
+
+# I want to know about redefined variables
+[Variables::ProhibitReusedNames]
+severity = 4
+
+# Testing for found words
+[BadStrings]
+words = Joel Maslak
+severity = 4
+
