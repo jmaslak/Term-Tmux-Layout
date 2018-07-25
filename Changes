@@ -1,4 +1,6 @@
 {{$NEXT}}
+ * TRIAL release.
+ * Fix syntax error issue with Perl <= 5.12
 
 1.182060  2018-07-24 22:21:15-06:00 America/Denver (TRIAL RELEASE)
  * TRIAL release.
