@@ -106,7 +106,7 @@ sub get_size {
         diag join(' ', 'tmux', 'new-window', '-n', 'test', '-t', $sn,
             ${Config{perlpath}}, $getwinsize, $port) if $DIAG;
         system('tmux','new-window','-n','test','-t',$sn,
-            ${Config{perlpath}}, $getwinsize, $port, @INC);
+            ${Config{perlpath}}, $getwinsize, $port);
         exit;
     } else {
         fail("Fork failed");
@@ -115,6 +115,8 @@ sub get_size {
     my $resolution;
 
     my $remote = $sock->accept();
+    print $remote join('|', @INC);
+    print $remote "\n";
 
     my $line = <$remote>;
     chomp($line);
