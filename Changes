@@ -1,4 +1,7 @@
 {{$NEXT}}
+
+1.182060  2018-07-24 22:21:15-06:00 America/Denver (TRIAL RELEASE)
+ * TRIAL release.
  * Code of Conduct
  * Tests should exceed even with long @INC list
 
