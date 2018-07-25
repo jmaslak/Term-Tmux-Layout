@@ -1,0 +1,158 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Term::Tmux::Layout - Create tmux layout strings programmatically
+
+=head1 VERSION
+
+version 1.182060
+
+=head1 SYNOPSIS
+
+  my $layout = Term::Tmux::Layout->new();
+  my $checksum = $layout->set_layout('abc|def');
+
+=head1 DESCRIPTION
+
+Set tmux pane layouts using via a simpler interface.  See also L<tmuxlayout>
+which wraps this module in a command-line script.
+
+=head1 ATTRIBUTES
+
+=head2 hsize
+
+Defines the width of the terminal window (the entire canvas),
+with a default of 80.
+
+=head2 vsize
+
+Defines the height of the terminal window tmux canvas (does not
+include the status line and command line at the bottom, so this
+should be one line smaller than the actual terminal emulator
+window size).  This defaults to 24.
+
+=head1 METHODS
+
+=head2 set_layout( $definition )
+
+This option sets the layout to the string definition provided. The string
+provided must follow the requirements of C<layout()> described elsewhere
+in this document.
+
+This command will determine the current tmux window size (using
+C<get_window_size()>) and then calls C<layout()> to get the layout string
+in proper tmux format.  Finally, it executes tmux to select that layout
+as the active layout.
+
+You can only run this method from a tmux window.  C<tmuxlayout> is a thin
+wrapper around this function.
+
+=head2 layout ( $layout )
+
+This method takes a "layout" in a text format, and outputs
+the proper output.
+
+The layout format consists of a text field of numbers or other
+characters, separated by new lines.  Each character reflects a
+single pane on the screen, defining its' size in rows and
+columns.
+
+Some sample layouts:
+
+  11123
+  11124
+
+This would create a layout with 4 panes.  The panes would be
+arranged such that pane 1 takes up the entire vertical canvas,
+but only 3/5ths of the horizontal canvas.  Pane 2 also takes up
+the entire vertical canvas, but only 1/5 of the horizontal
+canvas.  Pane 3 and 4 are stacked, taking 1/5 of the horizontal
+canvas, evenly splitting the vertical canvas.
+
+Note that some layouts cannot be displayed by tmux.  For example,
+the following would be invalid:
+
+  1122
+  1134
+  5556
+
+Tmux divides the entire screen up either horizontally or vertically.
+However, there is no single horizontal or vertical split that would
+allow this screen to be divided.
+
+This layout can be passed a single scalar, where the rows are
+seperated by pipe characters C<|> or new lines.
+
+If this function is passed an array in the place of the definition,
+each element starts its own row.  Each element can also contain pipe
+or newlines, and these are also interpreted as row deliminators.
+
+Thus, the following are all valid calls to layout:
+
+  $obj->layout('abc|def|ghi');
+
+  $obj->layout("abc\ndef\nghi");
+
+  $obj->layout('abc', 'def', 'ghi');
+
+  $obj->layout('abc|def', 'ghi');
+
+=head2 checksum( $str )
+
+This method performs the tmux checksum, as described in the tmux
+source code in C<layout_checksum()>.  The input value is the string
+without the checksum on the front.  The output is the checksum
+value as a string (four hex characters).
+
+=head2 get_window_size( )
+
+This method fetches the window size for the currently active tmux
+window.  If tmux is not running, it instead returns C<undef>.
+
+=head2 new
+
+  my $layout = Term::Tmux::Layout( hsize => 80, vsize => 23 );
+
+Create a new layout class.  Optionally takes named parameters
+for the C<hsize> and C<vsize>.
+
+=head1 TODO
+
+=over 4
+
+=item * Break out command execution
+
+There probably should be a Term::Tmux::Command module to execute tmux
+commands, rather than having the window size commands executed directly
+by this module.
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/jmaslak/Term-Tmux-Layout>
+
+=head1 SEE ALSO
+
+See L<tmuxlayout> for a command line utility that wraps this module.
+
+=head1 BUGS
+
+Check the issue tracker at:
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Term-Layout>
+
+=head1 AUTHOR
+
+Joelle Maslak <jmaslak@antelope.net>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2015-2018 by Joelle Maslak.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
