@@ -1,5 +1,6 @@
 language: perl
 perl:
+  - "5.28"
   - "5.26"
   - "5.24.0-thr"
   - "5.22"
@@ -17,7 +18,6 @@ matrix:
     - perl: 5.24
       env: COVERAGE=1
   allow_failures:
-    - perl: "5.24.0-thr"
     - perl: blead
 before_install:
   - eval $(curl https://travis-perl.github.io/init) --auto
