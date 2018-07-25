@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+1.182062  2018-07-25 06:26:20-06:00 America/Denver
+ * From 1.82060: Tests should succeed even with long @INC list
+
 1.182061  2018-07-24 22:59:00-06:00 America/Denver (TRIAL RELEASE)
  * TRIAL release.
  * Fix syntax error issue with Perl <= 5.12
@@ -7,7 +10,7 @@
 1.182060  2018-07-24 22:21:15-06:00 America/Denver (TRIAL RELEASE)
  * TRIAL release.
  * Code of Conduct
- * Tests should exceed even with long @INC list
+ * Tests should succeed even with long @INC list
 
 1.005 - Sep 15, 2017
  * Change author name
