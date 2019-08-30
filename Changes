@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+1.192420  2019-08-29 21:36:57-06:00 America/Denver (TRIAL RELEASE)
  * TRIAL release.
  * Fix Issue#2 reported by halfmu, pane borders not properly
    accommodated. This change will result in tmuxlayout sometimes dividing
