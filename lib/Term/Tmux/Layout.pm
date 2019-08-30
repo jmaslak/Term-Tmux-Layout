@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015,2016,2017,2018 Joelle Maslak
+# Copyright (C) 2015-2019 Joelle Maslak
 # All Rights Reserved - See License
 #
 
@@ -513,6 +513,6 @@ See L<tmuxlayout> for a command line utility that wraps this module.
 =head1 BUGS
 
 Check the issue tracker at:
-L<https://rt.cpan.org/Public/Dist/Display.html?Name=Term-Layout>
+L<https://github.com/jmaslak/Term-Tmux-Layout/issues>
 
 =cut
