@@ -2,7 +2,7 @@
 # Yes, we want to make sure things work in taint mode
 
 #
-# Copyright (C) 2015 Joelle Maslak
+# Copyright (C) 2015-2019 Joelle Maslak
 # All Rights Reserved - See License
 #
 
@@ -41,12 +41,12 @@ for ( my $i = 0; $i < scalar(@layouts); $i++ ) {
     [ 'xx',         'acdf,80x24,0,0,100' ],
     [ "x\nx",       'acdf,80x24,0,0,100' ],
     [ "xx\nxx",     'acdf,80x24,0,0,100' ],
-    [ "xY",         'ab1f,80x24,0,0{39x24,0,0,100,41x24,40,0,100}' ],
-    [ "xxYY",       'ab1f,80x24,0,0{39x24,0,0,100,41x24,40,0,100}' ],
-    [ "xY\nxY",     'ab1f,80x24,0,0{39x24,0,0,100,41x24,40,0,100}' ],
-    [ "xxYY\nxxYY", 'ab1f,80x24,0,0{39x24,0,0,100,41x24,40,0,100}' ],
-    [ "xYY\nxYY",   'b6cb,80x24,0,0{26x24,0,0,100,54x24,27,0,100}' ],
-    [ "xYYz",       '4f76,80x24,0,0{19x24,0,0,100,61x24,20,0{40x24,20,0,100,21x24,60,0,100}}' ],
+    [ "xY",         'ad17,80x24,0,0{39x24,0,0,100,40x24,41,0,100}' ],
+    [ "xxYY",       'ad17,80x24,0,0{39x24,0,0,100,40x24,41,0,100}' ],
+    [ "xY\nxY",     'ad17,80x24,0,0{39x24,0,0,100,40x24,41,0,100}' ],
+    [ "xxYY\nxxYY", 'ad17,80x24,0,0{39x24,0,0,100,40x24,41,0,100}' ],
+    [ "xYY\nxYY",   'b8c3,80x24,0,0{26x24,0,0,100,53x24,28,0,100}' ],
+    [ "xYYz",       '91b6,80x24,0,0{19x24,0,0,100,60x24,21,0{39x24,21,0,100,20x24,61,0,100}}' ],
 );
 
 # Some layout tests
@@ -57,5 +57,5 @@ for ( my $i = 0; $i < scalar(@layouts); $i++ ) {
 
 # Layout test using multiple arguments
 my $result = $layout->layout( 'xxYY', 'xxYY' );
-is( $result, 'ab1f,80x24,0,0{39x24,0,0,100,41x24,40,0,100}', 'Layout test multiple arguments' );
+is( $result, 'ad17,80x24,0,0{39x24,0,0,100,40x24,41,0,100}', 'Layout test multiple arguments' );
 
