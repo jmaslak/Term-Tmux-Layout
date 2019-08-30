@@ -1,4 +1,9 @@
 {{$NEXT}}
+ * TRIAL release.
+ * Fix Issue#2 reported by halfmu, pane borders not properly
+   accommodated. This change will result in tmuxlayout sometimes dividing
+   the display slightly differently than tmux itself would, but it should
+   give each division a fair share of screen area.
 
 1.182062  2018-07-25 06:26:20-06:00 America/Denver
  * From 1.82060: Tests should succeed even with long @INC list

@@ -192,8 +192,8 @@ sub _divide {
     # Absolute Location, in col/row, of start of this division
     my $h_char_abs_b = $gridstruct->{hgrid}->[$h_grid_abs_b];
     my $v_char_abs_b = $gridstruct->{vgrid}->[$v_grid_abs_b];
-    # if ($h_char_abs_b > 0) { $h_char_abs_b++; } # Adjust for pane border
-    # if ($v_char_abs_b > 0) { $v_char_abs_b++; } # Adjust for pane border
+    if ($h_char_abs_b > 0) { $h_char_abs_b++; } # Adjust for pane border
+    if ($v_char_abs_b > 0) { $v_char_abs_b++; } # Adjust for pane border
 
     # Absolute Location, in col/row of end+1 of this division
     my $h_char_abs_n = $gridstruct->{hgrid}->[$h_grid_abs_n];
