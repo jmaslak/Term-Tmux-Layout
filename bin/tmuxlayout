@@ -31,6 +31,10 @@ Some sample layouts:
   11123
   11124
 
+Which can also be written as:
+
+  11123 11124
+
 This would create a layout with 4 panes.  The panes would be
 arranged such that pane 1 takes up the entire vertical canvas,
 but only 3/5ths of the horizontal canvas.  Pane 2 also takes up
@@ -38,18 +42,28 @@ the entire vertical canvas, but only 1/5 of the horizontal
 canvas.  Pane 3 and 4 are stacked, taking 1/5 of the horizontal
 canvas, evenly splitting the vertical canvas.
 
+It would look like:
+
+  +------+--+--+
+  |      |  |  |
+  |      |  |  |
+  |      |  +--+
+  |      |  |  |
+  |      |  |  |
+  +------+--+--+
+
 Note that some layouts cannot be displayed by tmux.  For example,
 the following would be invalid:
 
   1122
   1134
-  5556
+  5554
 
 Tmux divides the entire screen up either horizontally or vertically.
 However, there is no single horizontal or vertical split that would
 allow this screen to be divided.
 
-This layout can be passed a single argument, where the rows are
+The layout can be passed a single argument, where the rows are
 seperated by pipe characters C<|> or new lines embedded in the
 argument.
 
@@ -69,7 +83,7 @@ Thus, the following are all valid ways of calling C<tmuxlayout>:
   def
   ghi"
 
-  tmuxlayout 'abc', 'def', 'ghi';
+  tmuxlayout abc def ghi;
 
   tmuxlayout 'abc|def', 'ghi';
 

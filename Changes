@@ -1,4 +1,5 @@
 {{$NEXT}}
+ * Improve documentation
 
 1.192430  2019-08-30 23:34:01-06:00 America/Denver
  * From 1.192420 - Fixed pane borders not being properly considered.
