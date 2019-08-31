@@ -8,7 +8,7 @@ Term::Tmux::Layout - Create tmux layout strings programmatically
 
 =head1 VERSION
 
-version 1.192420
+version 1.192430
 
 =head1 SYNOPSIS
 
