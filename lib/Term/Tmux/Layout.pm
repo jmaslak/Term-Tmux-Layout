@@ -90,7 +90,7 @@ the following would be invalid:
 
   1122
   1134
-  5556
+  5554
 
 Tmux divides the entire screen up either horizontally or vertically.
 However, there is no single horizontal or vertical split that would
