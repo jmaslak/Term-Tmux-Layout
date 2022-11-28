@@ -112,7 +112,7 @@ by this application.
 =head1 BUGS
 
 Check the issue tracker at:
-L<https://rt.cpan.org/Public/Dist/Display.html?Name=Term-Layout>
+L<https://github.com/jmaslak/Term-Tmux-Layout/issues>
 
 =cut
 
